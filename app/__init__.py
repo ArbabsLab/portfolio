@@ -21,3 +21,7 @@ def hobbies():
 @app.route('/experiences')
 def experiences():
     return render_template('experiences.html', title="Experiences", url=os.getenv("URL"))
+
+@app.route('/education')
+def education():
+    return render_template('education.html', title="Education", url=os.getenv("URL"))
