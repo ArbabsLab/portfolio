@@ -49,34 +49,14 @@
         </div>
     
         <div class="hobbies-list">
-          <div class="hobby-card">
-            <h3>⚽ Soccer</h3>
-            <p>
-              I've been passionate about soccer since I was a kid. My favorite team is FC Barcelona and my all time favorite player is Andres Iniesta. I set aside time to play soccer with my friends almost every week.
-            </p>
+            {% for hobby in hobbies %}
+              <div class="hobby-card">
+                <h3>{{ hobby.icon }} {{ hobby.name }}</h3>
+                <p>{{ hobby.description }}</p>
+              </div>
+            {% endfor %}
           </div>
-    
-          <div class="hobby-card">
-            <h3>🏋️ Calisthenics</h3>
-            <p>
-              Training with my bodyweight helps me build strength and discipline. I also enjoy working out outdoors in jungle gyms just because it doesn't feel suffocating. I'm currently in the midst of recovering from some shoulder injuries and slowly working back up to my normal routine.
-            </p>
-          </div>
-    
-          <div class="hobby-card">
-            <h3>📺 Binging TV Shows and Movies</h3>
-            <p>
-              I unwind with shows every night. I mostly enjoy thrillers but I have recently started exploring other genres.
-            </p>
-          </div>
-    
-          <div class="hobby-card">
-            <h3>🎧 Music & Podcasts</h3>
-            <p>
-              Whether I'm working out, coding, or walking, I always have a playlist or podcast running in the background.
-            </p>
-          </div>
-        </div>
+          
       </div>
   
       
