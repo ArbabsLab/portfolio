@@ -17,3 +17,7 @@ def about():
 @app.route('/hobbies')
 def hobbies():
     return render_template('hobbies.html', title="Hobbies", url=os.getenv("URL"))
+
+@app.route('/experiences')
+def experiences():
+    return render_template('experiences.html', title="Experiences", url=os.getenv("URL"))
