@@ -13,3 +13,7 @@ def index():
 @app.route('/about')
 def about():
     return render_template('about.html', title="About", url=os.getenv("URL"))
+
+@app.route('/hobbies')
+def hobbies():
+    return render_template('hobbies.html', title="Hobbies", url=os.getenv("URL"))
