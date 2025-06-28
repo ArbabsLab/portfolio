@@ -8,7 +8,22 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', title="MLH Fellow", url=os.getenv("URL"))
+    return render_template(
+        'about.html',
+        title="About",
+        url=os.getenv("URL"),
+        name="Arbab",
+        about_text=(
+            "A student at The City College of New York studying computer science. "
+            "I am currently building full-stack web applications using React and Python frameworks. "
+            "Recently, I have begun exploring AI and integrating its features within my projects to serve specific purposes. "
+            "Additionally, I have started venturing beyond web development, beginning with site reliability engineering (SRE). "
+            "Outside of programming, my passions include sports and fitness. I'm a huge soccer fan and have loved the game since I was a kid. "
+            "I'm also getting into calisthenics to lead a healthier future."
+        ),
+        skills=["React", "Python", "JavaScript", "Flask", "REST APIs"],
+        hobbies=["Soccer", "Calisthenics", "TV Shows", "Gaming"]
+    )
 
 @app.route('/about')
 def about():
