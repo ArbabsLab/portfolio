@@ -1,28 +1,33 @@
 import os
-import datetime
-import pymysql
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
+import datetime
 from peewee import *
 from playhouse.shortcuts import model_to_dict
 
 load_dotenv()
-app = Flask(__name__)
 
+app = Flask(__name__)
 mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"), user=os.getenv("MYSQL_USER"), password=os.getenv("MYSQL_PASSWORD"), host=os.getenv("MYSQL_HOST"), port=3306)
 
 print(mydb)
-
+print(os.getenv("MYSQL_DATABASE"))
 class TimelinePost(Model):
     name = CharField()
     email = CharField()
     content = TextField()
     created_at = DateTimeField(default=datetime.datetime.now)
+
     class Meta:
         database = mydb
 
-mydb.connect()
+try:
+    mydb.connect()
+except InterfaceError as e:
+    print(e)
+
 mydb.create_tables([TimelinePost])
+
 
 @app.route('/')
 def index():
@@ -61,6 +66,7 @@ def about():
         skills=["React", "Python", "JavaScript", "Flask", "REST APIs"],
         hobbies=["Soccer", "Calisthenics", "TV Shows", "Gaming"]
     )
+
 
 @app.route('/hobbies')
 def hobbies():
@@ -104,6 +110,7 @@ def hobbies():
         ]
     )
 
+
 @app.route('/experiences')
 def experiences():
     return render_template(
@@ -143,6 +150,7 @@ def experiences():
         ]
     )
 
+
 @app.route('/education')
 def education():
     return render_template(
@@ -178,14 +186,13 @@ def post_time_line_post():
 
 @app.route('/api/timeline_post', methods=['GET'])
 def get_time_line_post():
-    return {'timeline_posts': [model_to_dict(p) for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())]}
+    return {
+        'timeline_posts': [model_to_dict(p) for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())]
+        }
 
 @app.route('/api/timeline_post/<int:post_id>', methods=['DELETE'])
 def delete_time_line_post(post_id):
     post = TimelinePost.get_by_id(post_id)
     post.delete_instance()
     return model_to_dict(post)
-
-if __name__ == "__main__":
-    app.run()
 
