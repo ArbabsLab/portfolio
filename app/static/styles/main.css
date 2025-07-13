@@ -441,3 +441,48 @@ body {
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
   }
   
+  .timeline-container {
+    padding: 2rem;
+    background: #f9f9f9;
+    margin-top: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .timeline-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .timeline-form input,
+  .timeline-form textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  .timeline-form button {
+    width: fit-content;
+    padding: 0.6rem 1.2rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .timeline-posts ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .timeline-posts li {
+    background: white;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }

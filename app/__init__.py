@@ -176,6 +176,10 @@ def education():
         ]
     )
 
+@app.route("/timeline")
+def timeline():
+    return render_template('timeline.html', title="Timeline")
+
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
     name = request.form['name']
@@ -195,4 +199,5 @@ def delete_time_line_post(post_id):
     post = TimelinePost.get_by_id(post_id)
     post.delete_instance()
     return model_to_dict(post)
+
 
