@@ -1,12 +1,13 @@
 #!/bin/bash
 
-cd /portfolio
+cd /root/portfolio
 git fetch
 git reset origin/main --hard
 
-source python3-virtual-env/bin/activate
+source python3-virtualenv/bin/activate
 
-pip3 install -r requirements.txt
+pip install -r requirements.txt
+deactivate
 
 systemctl daemon-reload
 systemctl restart myportfolio
