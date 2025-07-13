@@ -20,19 +20,20 @@
 </head>
 
 <body>
-    <header class="nav-bar">
-        <div class="nav-content">
-          <a href="/" class="nav-logo">
-            <img src="./static/img/logo.svg" alt="Logo" />
-          </a>
-          <nav class="nav-links">
-            <a href="about">About</a>
-            <a href="hobbies">Hobbies</a>
-            <a href="experiences">Experience</a>
-            <a href="education">Education</a>
-          </nav>
-        </div>
-      </header>
+  <header class="nav-bar">
+    <div class="nav-content">
+      <a href="/" class="nav-logo">
+        <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Logo" />
+      </a>
+      <nav class="nav-links">
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('hobbies') }}">Hobbies</a>
+        <a href="{{ url_for('experiences') }}">Experience</a>
+        <a href="{{ url_for('education') }}">Education</a>
+        <a href="{{ url_for('timeline') }}">Timeline</a>
+      </nav>
+    </div>
+  </header>
 
     <div class="profile">
         <div id="profile-picture" class="profile-picture">
