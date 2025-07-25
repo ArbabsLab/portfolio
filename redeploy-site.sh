@@ -13,4 +13,4 @@ docker compose -f docker-compose.prod.yml down
 # 4. Rebuild and spin up containers
 docker compose -f docker-compose.prod.yml up -d --build
 
-
+#TODO: ping the sql server and ping the website.
