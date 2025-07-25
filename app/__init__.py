@@ -33,12 +33,11 @@ class TimelinePost(Model):
         database = mydb
 
 
-try:
-    mydb.connect()
-    print("Connected to MySQL!")
-    mydb.create_tables([TimelinePost])
-except OperationalError as e:
-    print(e)
+
+mydb.connect()
+    
+mydb.create_tables([TimelinePost])
+
 
 
 
