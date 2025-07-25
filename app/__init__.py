@@ -1,4 +1,5 @@
 import os
+import time
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 import datetime
@@ -32,23 +33,13 @@ class TimelinePost(Model):
         database = mydb
 
 
-import time
-from peewee import OperationalError
+try:
+    mydb.connect()
+    print("Connected to MySQL!")
+    mydb.create_tables([TimelinePost])
+except OperationalError as e:
+    print(e)
 
-max_retries = 10
-for attempt in range(max_retries):
-    try:
-        mydb.connect()
-        print("Connected to MySQL")
-        break
-    except OperationalError as e:
-        print(f"Attempt {attempt+1} failed: {e}")
-        time.sleep(3)
-else:
-    raise Exception("Could not connect to MySQL after several attempts")
-
-mydb.connect()
-mydb.create_tables([TimelinePost])
 
 
 @app.route('/')
