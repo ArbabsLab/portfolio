@@ -35,58 +35,72 @@
         </div>
       </header>
   
-      <div class="profile">
-          <div id="profile-picture" class="profile-picture">
-              <img src="./static/img/ProfilePic.jpeg">
-          </div>
-          <h1>Arbab's Timeline</h1>
+      <div class="neo-profile">
+        <div class="neo-profile-picture">
+          <img src="./static/img/ProfilePic.jpeg" alt="Profile Picture">
+        </div>
+        <h1 class="neo-profile-title">Arbab's Timeline</h1>
       </div>
+      
 
       <div class="timeline-container">
-        <h2>Share Your Thoughts</h2>
-        <form id="timeline-form" class="timeline-form">
-          <input type="text" id="name" name="name" placeholder="Your name" required />
-          <input type="email" id="email" name="email" placeholder="Your email" required />
-          <textarea id="content" name="content" placeholder="What’s on your mind?" rows="4" required></textarea>
-          <button type="submit">Post</button>
-        </form>
-      
-        <div id="timeline-posts" class="timeline-posts">
-          <h2>Timeline</h2>
-          <ul id="post-list"></ul>
+        
+        <div id="timeline-posts" class="neo-timeline-posts">
+          <h2 class="neo-timeline-title">Timeline</h2>
+          <ul id="post-list" class="neo-post-list"></ul>
         </div>
+
+        <div class="neo-form-container">
+          <h2 class="neo-form-title">Share Your Thoughts</h2>
+          <form id="timeline-form" class="neo-form">
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+            <input type="email" id="email" name="email" placeholder="Your email" required />
+            <textarea id="content" name="content" placeholder="What’s on your mind?" rows="4" required></textarea>
+            <button type="submit">Post</button>
+          </form>
+        </div>
+        
+      
+        
+        
       </div>
     <script>
         const form = document.getElementById('timeline-form');
         const postList = document.getElementById('post-list');
 
         async function fetchPosts() {
-            const res = await fetch('/api/timeline_post');
-            const data = await res.json();
+          const res = await fetch('/api/timeline_post');
+          const data = await res.json();
 
-            postList.innerHTML = ''; 
+          postList.innerHTML = '';
 
-            data.timeline_posts.forEach(post => {
+          data.timeline_posts.forEach(post => {
             const li = document.createElement('li');
-            li.innerHTML = `<strong>${post.name}</strong> (${post.email})<br>${post.content}<br><small>${new Date(post.created_at).toLocaleString()}</small>`;
+            li.innerHTML = `
+              <div class="neo-post">
+                <strong>${post.name}</strong>
+                <span class="neo-email">(${post.email})</span>
+                <p class="neo-content">${post.content}</p>
+                <small>${new Date(post.created_at).toLocaleString()}</small>
+              </div>
+            `;
             postList.appendChild(li);
-            });
+          });
         }
 
         form.addEventListener('submit', async e => {
-            e.preventDefault();
+          e.preventDefault();
 
-            const formData = new FormData(form);
-            await fetch('/api/timeline_post', {
+          const formData = new FormData(form);
+          await fetch('/api/timeline_post', {
             method: 'POST',
             body: formData
-            });
+          });
 
-            form.reset();
-            fetchPosts(); 
+          form.reset();
+          fetchPosts();
         });
 
-        
         fetchPosts();
     </script>
   
