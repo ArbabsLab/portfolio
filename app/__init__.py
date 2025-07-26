@@ -38,7 +38,7 @@ class TimelinePost(Model):
 mydb.connect()
     
 mydb.create_tables([TimelinePost])
-
+neo_colors = ["#FFDD00", "#FF6B6B", "#1DD3B0", "#A259FF", "#F7B801", "#00B8A9"]
 
 
 
@@ -132,41 +132,44 @@ def hobbies():
 
 @app.route('/experiences')
 def experiences():
+    experiences = [
+        {
+            "title": "SRE Fellow",
+            "company": "Meta x MLH",
+            "duration": "June 2025 – Present",
+            "bullets": ["Incoming Meta x MLH site reliability fellow"],
+        },
+        {
+            "title": "Software Engineer Intern",
+            "company": "IT Services LLC",
+            "duration": "July 2024 – August 2024",
+            "bullets": [
+                "Led development of an AI chatbot using Groq API with Llama 3.1, tailored for K-12 math tutoring.",
+                "Integrated GTTS for text-to-speech with 5 voices and 3 accents, enhancing accessibility for users.",
+                "Worked on backend integration with MongoDB and REST APIs to store and retrieve chat history efficiently.",
+            ],
+        },
+        {
+            "title": "Computer Aide Intern",
+            "company": "Con Edison",
+            "duration": "Dec 2022 – May 2025",
+            "bullets": [
+                "Coordinated and assigned over 5,000 CM/PM work orders using IBM Maximo, ensuring alignment with scope and unit outages.",
+                "Optimized complex SQL queries in Maximo to extract and analyze 100K+ records, improving planning and decision-making.",
+                "Built a custom Power App with Power Automate to send automated emails, cutting processing time by 20%.",
+                "Automated Excel data tasks with VBA, reducing manual work by 75% and significantly boosting accuracy.",
+            ],
+        },
+    ]
+
+    for i, job in enumerate(experiences):
+        job["color"] = neo_colors[i % len(neo_colors)]
+
     return render_template(
-        'experiences.html',
+        "experiences.html",
         title="Experiences",
         url=os.getenv("URL"),
-        experiences=[
-            {
-                "title": "SRE Fellow",
-                "company": "Meta x MLH",
-                "duration": "June 2025 – Present",
-                "bullets": [
-                    "Incoming Meta x MLH site reliability fellow"
-                ]
-            },
-            {
-                "title": "Software Engineer Intern",
-                "company": "IT Services LLC",
-                "duration": "July 2024 – August 2024",
-                "bullets": [
-                    "Led development of an AI chatbot using Groq API with Llama 3.1, tailored for K-12 math tutoring.",
-                    "Integrated GTTS for text-to-speech with 5 voices and 3 accents, enhancing accessibility for users.",
-                    "Worked on backend integration with MongoDB and REST APIs to store and retrieve chat history efficiently."
-                ]
-            },
-            {
-                "title": "Computer Aide Intern",
-                "company": "Con Edison",
-                "duration": "Dec 2022 – May 2025",
-                "bullets": [
-                    "Coordinated and assigned over 5,000 CM/PM work orders using IBM Maximo, ensuring alignment with scope and unit outages.",
-                    "Optimized complex SQL queries in Maximo to extract and analyze 100K+ records, improving planning and decision-making.",
-                    "Built a custom Power App with Power Automate to send automated emails, cutting processing time by 20%.",
-                    "Automated Excel data tasks with VBA, reducing manual work by 75% and significantly boosting accuracy."
-                ]
-            }
-        ]
+        experiences=experiences,
     )
 
 
@@ -183,7 +186,8 @@ def education():
             "description": (
                 "Currently pursuing a Bachelor's in Computer Science, focusing on "
                 "software engineering, systems programming, and artificial intelligence."
-            )
+            ),
+            "color": neo_colors[0]
         },
         coursework=[
             "Data Structures & Algorithms",
@@ -192,7 +196,8 @@ def education():
             "Artificial Intelligence",
             "Database Systems",
             "Computer Architecture"
-        ]
+        ],
+        coursework_color=neo_colors[1]
     )
 
 @app.route("/timeline")

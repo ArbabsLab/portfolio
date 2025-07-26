@@ -345,83 +345,80 @@ body {
     line-height: 1.6;
   }
 
-  .education-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 3rem 2rem;
+  .neo-education-container {
     max-width: 1200px;
-    margin: auto;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
-    transition: all 0.3s ease-in-out;
+    margin: 4rem auto;
+    padding: 3rem;
+    background: white;
+    border: 3px solid black;
+    box-shadow: 10px 10px 0 black;
   }
   
-  .education-container:hover {
-    box-shadow: 0 0 40px #1d539f;
+  .neo-education-text {
+    margin-bottom: 2.5rem;
   }
   
-  .education-text h1 {
+  .neo-education-title {
     font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #1d539f;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-bottom: 4px solid black;
+    display: inline-block;
+    padding-bottom: 0.4rem;
   }
   
-  .education-text p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #1d539f;
+  .neo-education-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
   }
   
-  .education-list {
+  .neo-education-card {
+    border: 2px solid black;
+    padding: 1.8rem;
+    height: 260px;
+    color: black;
+    box-shadow: 6px 6px 0 black;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    justify-content: flex-start;
   }
   
-  .education-card {
-    background: #1d539f;
-    color: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  .neo-education-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0 black;
   }
   
-  .education-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 20px rgba(29, 83, 159, 0.5);
+  .neo-education-school {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
   }
   
-  .education-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.3rem;
-  }
-  
-  .education-card .duration {
+  .neo-education-duration {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
     display: block;
-    font-size: 0.95rem;
-    font-style: italic;
-    margin-bottom: 0.75rem;
-    color: #e0e0e0;
   }
   
-  .education-card p {
+  .neo-education-description {
     font-size: 1rem;
     line-height: 1.6;
   }
   
-  .course-list {
-    margin-top: 0.5rem;
+  .neo-course-list {
+    list-style: square;
     padding-left: 1.2rem;
+    margin-top: 0.5rem;
   }
   
-  .course-list li {
-    margin-bottom: 0.4rem;
-    list-style-type: disc;
+  .neo-course-list li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.3rem;
   }
+  
 
   .map-container {
     max-width: 1000px;

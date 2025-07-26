@@ -43,23 +43,28 @@
       </div>
       <h1 class="neo-profile-title">Arbab's Professional Experiences</h1>
     </div>
-      <div class="experiences-container">
-        <div class="experiences-text">
-          <h1>Professional Experiences</h1>
-        </div>
-      
-        <div class="experiences-list">
-          {% for job in experiences %}
-            <div class="experience-card">
-              <h3>{{ job.title }} @ {{ job.company }}</h3>
-              <span class="duration">{{ job.duration }}</span>
-              {% for bullet in job.bullets %}
-                <p>{{ bullet }}</p>
-              {% endfor %}
-            </div>
-          {% endfor %}
-        </div>
+    
+    <div class="neo-experiences-container">
+      <div class="neo-experiences-text">
+        <h1 class="neo-experiences-title">Professional Experiences</h1>
       </div>
+    
+      <div class="neo-experiences-list">
+        {% for job in experiences %}
+          <div
+            class="neo-experience-card"
+            style="border-color: {{ job.color }}; background-color: {{ job.color }}20;">
+            <h3 class="neo-experience-title">{{ job.title }} @ {{ job.company }}</h3>
+            <span class="neo-experience-duration">{{ job.duration }}</span>
+            {% for bullet in job.bullets %}
+              <p class="neo-experience-bullet">{{ bullet }}</p>
+            {% endfor %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    
       
   
       

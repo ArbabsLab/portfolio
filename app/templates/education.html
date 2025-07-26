@@ -41,28 +41,30 @@
       </div>
       <h1 class="neo-profile-title">Arbab's Education</h1>
     </div>
-      <div class="education-container">
-        <div class="education-text">
-          <h1>Education</h1>
-        </div>
-      
-        <div class="education-list">
-          <div class="education-card">
-            <h3>{{ school.name }}</h3>
-            <span class="duration">{{ school.degree }} — {{ school.duration }}</span>
-            <p>{{ school.description }}</p>
-          </div>
-      
-          <div class="education-card">
-            <h3>Relevant Coursework</h3>
-            <ul class="course-list">
-              {% for course in coursework %}
-                <li>{{ course }}</li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-      </div>
+
+      <div class="neo-education-container">
+  <div class="neo-education-text">
+    <h1 class="neo-education-title">Education</h1>
+  </div>
+
+  <div class="neo-education-list">
+    <div class="neo-education-card" style="background-color: {{ school.color }};">
+      <h3 class="neo-education-school">{{ school.name }}</h3>
+      <span class="neo-education-duration">{{ school.degree }} — {{ school.duration }}</span>
+      <p class="neo-education-description">{{ school.description }}</p>
+    </div>
+
+    <div class="neo-education-card" style="background-color: {{ coursework_color }};">
+      <h3 class="neo-education-school">Relevant Coursework</h3>
+      <ul class="neo-course-list">
+        {% for course in coursework %}
+          <li>{{ course }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
   
       
   </body>
