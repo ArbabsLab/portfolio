@@ -590,5 +590,77 @@ body {
     transform: translate(-2px, -2px);
   }
   
+  .neo-hobbies-container {
+    max-width: 1400px;
+    margin: 4rem auto;
+    padding: 3rem;
+    background: white;
+    border: 3px solid black;
+    box-shadow: 10px 10px 0 black;
+    border-radius: 0;
+  }
+  
+  .neo-hobbies-text {
+    margin-bottom: 2.5rem;
+  }
+  
+  .neo-hobbies-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-bottom: 4px solid black;
+    display: inline-block;
+    padding-bottom: 0.4rem;
+  }
+  
+  .neo-hobbies-description {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  .neo-hobbies-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .neo-hobby-card {
+    border: 2px solid black;
+    padding: 1.8rem;
+    height: 260px;
+    color: black;
+    box-shadow: 6px 6px 0 black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .neo-hobby-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+  }
+  
+  .neo-hobby-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+  
+  /* Subtle hover */
+  .neo-hobby-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0 black;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   

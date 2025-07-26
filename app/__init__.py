@@ -1,4 +1,5 @@
 import os
+import random
 import time
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
@@ -82,44 +83,50 @@ def about():
 
 @app.route('/hobbies')
 def hobbies():
+    hobbies = [
+        {
+            "name": "Soccer",
+            "description": (
+                "I've been passionate about soccer since I was a kid. "
+                "My favorite team is FC Barcelona and my all-time favorite player is Andres Iniesta. "
+                "I set aside time to play soccer with my friends almost every week."
+            ),
+            "color": "#FFDD00",   # Bold yellow
+            "shape": "circle"
+        },
+        {
+            "name": "Calisthenics",
+            "description": (
+                "Training with my bodyweight helps me build strength and discipline. "
+                "I also enjoy working out outdoors in jungle gyms just because it doesn't feel suffocating. "
+                "I'm currently in the midst of recovering from some shoulder injuries and slowly working back up to my normal routine."
+            ),
+            "color": "#FF6B6B",   # Strong red
+            "shape": "triangle"
+        },
+        {
+            "name": "Binging Shows and Movies",
+            "description": (
+                "I unwind with shows every night. I mostly enjoy thrillers but I have recently started exploring other genres."
+            ),
+            "color": "#1DD3B0",   # Aqua green
+            "shape": "square"
+        },
+        {
+            "name": "Music & Podcasts",
+            "description": (
+                "Whether I'm working out, coding, or walking, I always have a playlist or podcast running in the background."
+            ),
+            "color": "#A259FF",   # Purple
+            "shape": "hexagon"
+        }
+    ]
+
     return render_template(
         'hobbies.html',
         title="Hobbies",
         url=os.getenv("URL"),
-        hobbies=[
-            {
-                "icon": "⚽",
-                "name": "Soccer",
-                "description": (
-                    "I've been passionate about soccer since I was a kid. "
-                    "My favorite team is FC Barcelona and my all time favorite player is Andres Iniesta. "
-                    "I set aside time to play soccer with my friends almost every week."
-                )
-            },
-            {
-                "icon": "🏋️",
-                "name": "Calisthenics",
-                "description": (
-                    "Training with my bodyweight helps me build strength and discipline. "
-                    "I also enjoy working out outdoors in jungle gyms just because it doesn't feel suffocating. "
-                    "I'm currently in the midst of recovering from some shoulder injuries and slowly working back up to my normal routine."
-                )
-            },
-            {
-                "icon": "📺",
-                "name": "Binging TV Shows and Movies",
-                "description": (
-                    "I unwind with shows every night. I mostly enjoy thrillers but I have recently started exploring other genres."
-                )
-            },
-            {
-                "icon": "🎧",
-                "name": "Music & Podcasts",
-                "description": (
-                    "Whether I'm working out, coding, or walking, I always have a playlist or podcast running in the background."
-                )
-            }
-        ]
+        hobbies=hobbies
     )
 
 

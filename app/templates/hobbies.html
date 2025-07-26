@@ -35,30 +35,34 @@
       </div>
     </header>
   
-      <div class="profile">
-          <div id="profile-picture" class="profile-picture">
-              <img src="./static/img/ProfilePic.jpeg">
-          </div>
-          <h1>Arbab's Hobbies</h1>
+    <div class="neo-profile">
+      <div class="neo-profile-picture">
+        <img src="./static/img/ProfilePic.jpeg" alt="Profile Picture">
       </div>
-      <div class="hobbies-container">
-        <div class="hobbies-text">
-          <h1>My Hobbies & Interests 🌟</h1>
-          <p>
-            Outside of programming and tech, I love staying active, and creative. Here are some things I enjoy doing in my free time:
-          </p>
-        </div>
+      <h1 class="neo-profile-title">Arbab's Hobbies</h1>
+    </div>
+
+    <div class="neo-hobbies-container">
+      <div class="neo-hobbies-text">
+        <h1 class="neo-hobbies-title">My Hobbies & Interests</h1>
+        <p class="neo-hobbies-description">
+          Outside of programming and tech, I love staying active and creative. Here are some things I enjoy doing in my free time:
+        </p>
+      </div>
     
-        <div class="hobbies-list">
-            {% for hobby in hobbies %}
-              <div class="hobby-card">
-                <h3>{{ hobby.icon }} {{ hobby.name }}</h3>
-                <p>{{ hobby.description }}</p>
-              </div>
-            {% endfor %}
+      <div class="neo-hobbies-list">
+        {% for hobby in hobbies %}
+          <div class="neo-hobby-card" style="background-color: {{ hobby.color }};">
+            <h3 class="neo-hobby-title">{{ hobby.name }}</h3>
+            <p class="neo-hobby-description">{{ hobby.description }}</p>
           </div>
-          
+        {% endfor %}
       </div>
+    </div>
+    
+    
+    
+
   
       
   </body>
