@@ -29,6 +29,9 @@ body {
   justify-content: space-between;
 }
 
+.nav-logo{
+  background: #0A2F5C;
+}
 .nav-logo img {
   height: 40px;
   width: auto;
