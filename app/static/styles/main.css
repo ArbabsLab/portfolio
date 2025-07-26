@@ -12,77 +12,57 @@ body {
 }
 
 .nav-bar {
-    width: 100%;
-    background-color: #1C539F;
-    font-family: "Roboto", serif;
-    font-weight: 700 !important;
-    padding: 10px 20px;
-    box-shadow: 0 2px 10px rgba(0, 255, 255, 0.15);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
+  border-bottom: 4px solid black;
+  background: white;
+  box-shadow: 6px 6px 0 black;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
 .nav-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.nav-logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+  border: 3px solid black;
+  padding: 2px;
+  box-shadow: 4px 4px 0 black;
+}
 
-.logo-touch-target {
-    display: inline-flex;
-    height: 60%;
-    width: 350px;
-  }
-  
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  
-  .nav-logo img {
-    width: 200px;
-    height: auto;
-  }
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
 
-.nav-content nav {
-    display: flex;
-    gap: 1.5rem;
-    text-align: right;
-    padding-right: 0;
-  }
-  
-  .nav-content nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-    position: relative;
-  }
-  
-  .nav-content nav a::after {
-    content: '';
-    display: block;
-    width: 0%;
-    height: 2px;
-    background: white;
-    transition: width 0.3s;
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-  }
-  
-  .nav-content nav a:hover {
-    color: #e0e0e0;
-  }
-  
-  .nav-content nav a:hover::after {
-    width: 100%;
-  }
+.nav-links a {
+  font-weight: 900;
+  font-size: 1rem;
+  color: black;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  border-color: black;
+}
+
+.nav-links a:active {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 black;
+}
+
 
   .neo-profile {
     width: 100%;
@@ -137,141 +117,86 @@ body {
     font-weight: 700;
 }
 
-.about-container {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    padding: 3rem 2rem;
-    max-width: 1200px;
-    margin: auto;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .about-container:hover {
-    box-shadow: 0 0 40px #1d539f;
-  }
+.neo-about-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem 2.5rem;
+  border: 3px solid black;
+  background: white;
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  border-radius: 0;
+  box-shadow: 6px 6px 0 black;
+}
 
-  .about-text{
-    width: 50%;
-  }
-  
-  .about-text h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  
-  .about-text .highlight {
-    color: #1d539f;
-  }
-  
-  .about-text p {
-    line-height: 1.8;
-    font-size: 1.1rem;
-    color: #1d539f;
-  }
-  
-  .about-decor h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-    color: #1d539f;
-  }
-  
-  .skills-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-  
-  .skills-list li {
-    background: #1d539f;
-    color: white;
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
-    transition: 0.3s;
-    cursor: default;
-  }
-  
-  .skills-list li:hover {
-    background: #1d539f;
-    color: #121212;
-    font-weight: bold;
-    transform: scale(1.05);
-  }
+.neo-about-text {
+  flex: 1 1 60%;
+  color: black;
+}
 
-  .hobbies-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 3rem 2rem;
-    max-width: 1200px;
-    margin: auto;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .hobbies-container:hover {
-    box-shadow: 0 0 30px #1d539f;
-  }
-  
-  .hobbies-text {
-    width: 100%;
-  }
-  
-  .hobbies-text h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #1d539f;
-  }
-  
-  .hobbies-text p {
-    line-height: 1.8;
-    font-size: 1.1rem;
-    color: #1d539f;
-  }
-  
-  .hobbies-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-  
-  .hobby-card {
-    background: #1d539f;
-    color: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    flex: 1 1 45%;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
-    transition: 0.3s ease-in-out;
-  }
-  
-  .hobby-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 20px rgba(29, 83, 159, 0.5);
-    background: #1d539f;
-    color: #f0f0f0;
-  }
-  
-  .hobby-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    color: white;
-  }
-  
-  .hobby-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
+.neo-about-text h1 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.neo-highlight {
+  color: #FF6B6B;
+  text-transform: uppercase;
+  border-bottom: 3px solid black;
+  padding-bottom: 0.2rem;
+}
+
+.neo-about-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #222;
+}
+
+.neo-about-decor {
+  flex: 1 1 35%;
+  border: 2px solid black;
+  padding: 1rem 1.5rem;
+  background: #FFDD00;  
+  box-shadow: 4px 4px 0 black;
+  color: black;
+  border-radius: 0;
+}
+
+.neo-about-decor h2 {
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  border-bottom: 3px solid black;
+  padding-bottom: 0.3rem;
+}
+
+.neo-skills-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #111;
+}
+
+.neo-skills-list li {
+  padding-left: 1rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.neo-skills-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: black;
+  font-weight: 900;
+}
+
 
   .neo-experiences-container {
     max-width: 1200px;
@@ -413,27 +338,33 @@ body {
   
 
   .map-container {
-    max-width: 1000px;
-    margin: 4rem auto;
+    max-width: 700px;
+    margin: 3rem auto;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+    border: 3px solid black;
+    background: white;
+    box-shadow: 6px 6px 0 black;
+    border-radius: 0;
     text-align: center;
   }
   
   .map-container h2 {
-    color: #1d539f;
-    font-size: 2rem;
+    font-size: 1.8rem;
+    font-weight: 900;
     margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    border-bottom: 3px solid black;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    color: black;
   }
   
   .static-map {
-    width: 100%;
-    max-width: 800px;
+    max-width: 100%;
     height: auto;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+    border: 2px solid black;
+    box-shadow: 4px 4px 0 black;
+    display: inline-block;
   }
   
   .timeline-container {

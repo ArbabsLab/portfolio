@@ -42,28 +42,29 @@
       <h1 class="neo-profile-title">About Arbab</h1>
     </div>
   
-    <div class="about-container">
-      <div class="about-text">
-        <h1>What's up y'all! I'm <span class="highlight">{{ name }}</span>.</h1>
+    <div class="neo-about-container">
+      <div class="neo-about-text">
+        <h1>What's up y'all! I'm <span class="neo-highlight">{{ name }}</span>.</h1>
         <p>{{ about_text }}</p>
       </div>
-  
-      <div class="about-decor">
+    
+      <div class="neo-about-decor">
         <h2>Skills</h2>
-        <ul class="skills-list">
+        <ul class="neo-skills-list">
           {% for skill in skills %}
             <li>{{ skill }}</li>
           {% endfor %}
         </ul>
-  
+    
         <h2>Hobbies</h2>
-        <ul class="skills-list">
+        <ul class="neo-skills-list">
           {% for hobby in hobbies %}
             <li>{{ hobby }}</li>
           {% endfor %}
         </ul>
       </div>
     </div>
+    
   
     <div class="map-container">
       <h2>Countries I've Visited</h2>
