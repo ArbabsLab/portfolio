@@ -43,7 +43,7 @@
       </div>
       <h1 class="neo-profile-title">Arbab's Professional Experiences</h1>
     </div>
-    
+
     <div class="neo-experiences-container">
       <div class="neo-experiences-text">
         <h1 class="neo-experiences-title">Professional Experiences</h1>
@@ -53,7 +53,7 @@
         {% for job in experiences %}
           <div
             class="neo-experience-card"
-            style="border-color: {{ job.color }}; background-color: {{ job.color }}20;">
+            style="border-color: {{ job.color }}; background-color: {{ job.color }};">
             <h3 class="neo-experience-title">{{ job.title }} @ {{ job.company }}</h3>
             <span class="neo-experience-duration">{{ job.duration }}</span>
             {% for bullet in job.bullets %}

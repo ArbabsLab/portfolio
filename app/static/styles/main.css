@@ -273,77 +273,69 @@ body {
     line-height: 1.6;
   }
 
-  .experiences-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 3rem 2rem;
+  .neo-experiences-container {
     max-width: 1200px;
-    margin: auto;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
-    transition: all 0.3s ease-in-out;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: white;
+    border: 3px solid black;
+    border-radius: 0;
   }
   
-  .experiences-container:hover {
-    box-shadow: 0 0 40px #1d539f;
+  .neo-experiences-text {
+    margin-bottom: 2rem;
+    text-align: left;
   }
   
-  .experiences-text {
-    width: 100%;
+  .neo-experiences-title {
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-bottom: 3px solid black;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+    color: black;
   }
   
-  .experiences-text h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: #1d539f;
-  }
-  
-  .experiences-text p {
-    line-height: 1.8;
-    font-size: 1.1rem;
-    color: #1d539f;
-  }
-  
-  .experiences-list {
+  .neo-experiences-list {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
   }
   
-  .experience-card {
-    background: #1d539f;
-    color: white;
+  .neo-experience-card {
+    border: 3px solid black; /* will be overridden inline */
     padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 6px;
+    background-color: white; /* overridden inline */
+    color: black;
+    box-shadow: 6px 6px 0 black;
+    transition: none; /* no hover effects */
+    height: auto;
+    min-height: 140px; /* consistent card height */
   }
   
-  .experience-card:hover {
-    transform: scale(1.01);
-    box-shadow: 0 0 20px rgba(29, 83, 159, 0.5);
-  }
-  
-  .experience-card h3 {
+  .neo-experience-title {
     font-size: 1.3rem;
-    margin-bottom: 0.3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
   }
   
-  .experience-card .duration {
-    display: block;
+  .neo-experience-duration {
     font-size: 0.95rem;
-    font-style: italic;
-    margin-bottom: 0.75rem;
-    color: #e0e0e0;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+    display: block;
   }
   
-  .experience-card p {
+  .neo-experience-bullet {
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    color: #111;
   }
+  
 
   .neo-education-container {
     max-width: 1200px;
