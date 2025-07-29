@@ -43,3 +43,27 @@ class AppTestCase(unittest.TestCase):
         self.assertEqual(response_json['name'], 'Andrew A')
         self.assertEqual(response_json['email'], 'andrew@a.com')
         self.assertEqual(response_json['content'], 'Andrew says hello')
+
+    def test_malformed_timeline_post(self):
+        response = self.client.post("/api/timeline_post", data={
+            "email": "john@example.com",
+            "content": "Hello world, I'm John!"
+        })
+        self.assertEqual(response.status_code, 400)
+        self.assertIn("Invalid name", response.get_data(as_text=True))
+
+        response = self.client.post("/api/timeline_post", data={
+            "name": "John Doe",
+            "email": "john@example.com",
+            "content": ""
+        })
+        self.assertEqual(response.status_code, 400)
+        self.assertIn("Invalid content", response.get_data(as_text=True))
+
+        response = self.client.post("/api/timeline_post", data={
+            "name": "John Doe",
+            "email": "not-an-email",
+            "content": "Hello world, I'm John!"
+        })
+        self.assertEqual(response.status_code, 400)
+        self.assertIn("Invalid email", response.get_data(as_text=True))

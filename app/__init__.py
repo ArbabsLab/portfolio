@@ -206,9 +206,9 @@ def timeline():
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
-    name = request.form['name']
-    email = request.form['email']
-    content = request.form['content']
+    name = request.form.get('name', '').strip()
+    email = request.form.get('email', '').strip()
+    content = request.form.get('content', '').strip()
 
     # Validate required fields
     if not name:
