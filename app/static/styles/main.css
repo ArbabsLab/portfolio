@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 p, h1, h2, h3, h4, h5, h6, button {
     font-family: "Roboto", serif;
 }
@@ -14,15 +19,15 @@ body {
 .nav-bar {
   border-bottom: 4px solid black;
   background: white;
-  box-shadow: 6px 6px 0 black;
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
 }
 
 .nav-content {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -67,37 +72,37 @@ body {
 }
 
 
-  .neo-profile {
-    width: 100%;
-    background: white;
-    border: 2px solid black;
-    border-radius: 0; 
-    padding: 2rem 1rem;
-    text-align: center;
-    box-shadow: none;
-  }
-  
-  .neo-profile-picture {
-    width: 8rem;
-    height: 8rem;
-    margin: 0 auto 1rem;
-    border: 2px solid black;
-    border-radius: 50%;
-    overflow: hidden;
-    background: #f5f5f5;
-  }
-  
-  .neo-profile-picture img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .neo-profile-title {
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 0;
-  }
+.neo-profile {
+  width: 100%;
+  background: white;
+  border: 2px solid black;
+  border-radius: 0; 
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: none;
+}
+
+.neo-profile-picture {
+  width: 8rem;
+  height: 8rem;
+  margin: 0 auto 1rem;
+  border: 2px solid black;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.neo-profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.neo-profile-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
   
   
 
@@ -232,15 +237,19 @@ body {
   }
   
   .neo-experience-card {
-    border: 3px solid black; /* will be overridden inline */
+    border: 2px solid black; 
     padding: 1.5rem;
     border-radius: 6px;
-    background-color: white; /* overridden inline */
+    background-color: white; 
     color: black;
     box-shadow: 6px 6px 0 black;
-    transition: none; /* no hover effects */
     height: auto;
-    min-height: 140px; /* consistent card height */
+    min-height: 140px; 
+  }
+
+  .neo-experience-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0 black;
   }
   
   .neo-experience-title {
@@ -273,6 +282,8 @@ body {
     border: 3px solid black;
     box-shadow: 10px 10px 0 black;
   }
+
+  
   
   .neo-education-text {
     margin-bottom: 2.5rem;
