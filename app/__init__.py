@@ -99,7 +99,7 @@ def hobbies():
             "description": (
                 "Training with my bodyweight helps me build strength and discipline. "
                 "I also enjoy working out outdoors in jungle gyms just because it doesn't feel suffocating. "
-                "I'm currently in the midst of recovering from some shoulder injuries and slowly working back up to my normal routine."
+                "I'm currently recovering from a shoulder injury and slowly working back up to my normal routine."
             ),
             "color": "#FF6B6B",   # Strong red
             "shape": "triangle"
