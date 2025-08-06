@@ -588,6 +588,70 @@ body {
     box-shadow: 8px 8px 0 black;
   }
   
+  .neo-projects-container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 3rem;
+    background: white;
+    border: 3px solid black;
+    box-shadow: 10px 10px 0 black;
+    border-radius: 0;
+  }
+  
+  .neo-projects-text {
+    margin-bottom: 2.5rem;
+  }
+  
+  .neo-projects-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-bottom: 4px solid black;
+    display: inline-block;
+    padding-bottom: 0.4rem;
+  }
+  
+  .neo-projects-description {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  .neo-projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .neo-project-card {
+    border: 2px solid black;
+    padding: 1.8rem;
+    height: 260px;
+    color: black;
+    box-shadow: 6px 6px 0 black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .neo-project-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+  }
+  
+  .neo-project-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+  
+  /* Hover effect */
+  .neo-project-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0 black;
+  }
   
   
   

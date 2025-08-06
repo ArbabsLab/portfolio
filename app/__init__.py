@@ -235,4 +235,45 @@ def delete_time_line_post(post_id):
     post.delete_instance()
     return model_to_dict(post)
 
+@app.route('/projects')
+def projects():
+    projects = [
+    {
+        "name": "Personal Portfolio Website",
+        "description": "A responsive website built with HTML, CSS, and Flask to showcase my skills, experience, and projects.",
+        "color": "#FFD966"
+    },
+    {
+        "name": "Book Recommendation App",
+        "description": "A full-stack application that recommends books based on user preferences using a Flask backend and Supabase auth.",
+        "color": "#9FE2BF"
+    },
+    {
+        "name": "Fitness & Diet Chatbot",
+        "description": "An interactive chatbot that generates personalized workout and diet plans using Gemini API and React.",
+        "color": "#FFB6C1"
+    },
+    {
+        "name": "Stock Market Sentiment Analyzer",
+        "description": "A FastAPI-based tool that scrapes SPY-related news and predicts trends based on sentiment analysis.",
+        "color": "#ADD8E6"
+    },
+    {
+        "name": "TLS Interpreter in Scheme",
+        "description": "A tiny Lisp subset interpreter with syntax checking, lexical scoping, and structural induction validation.",
+        "color": "#E6E6FA"
+    },
+    {
+        "name": "MTA Usage Visualizer",
+        "description": "A data visualization project that analyzes credit card ride history to reveal NYC subway usage patterns.",
+        "color": "#FFDEAD"
+    }
+]
+
+    return render_template(
+        'projects.html',
+        title="Projects",
+        url=os.getenv("URL"),
+        projects=projects)
+
 
